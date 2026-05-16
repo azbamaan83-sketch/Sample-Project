@@ -31,13 +31,13 @@ export default function Signup() {
       setLoading(true);
 
       const res = await axios.post(
-        "http://localhost:5000/api/auth/signup",
+        `${import.meta.env.VITE_API_URL}/api/auth/signup`,
         form
       );
 
       alert(res.data.message || "Signup Successful");
 
-      // AUTO REDIRECT TO LOGIN
+      // redirect to login page
       navigate("/login");
 
     } catch (err) {
@@ -81,7 +81,7 @@ export default function Signup() {
           onChange={handleChange}
         />
 
-        <button type="submit">
+        <button type="submit" disabled={loading}>
           {loading ? "Loading..." : "Signup"}
         </button>
       </form>
