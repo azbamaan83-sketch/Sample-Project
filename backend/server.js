@@ -11,7 +11,7 @@ const app = express();
 // CORS
 app.use(
   cors({
-    origin: "https://sample-project-71bv.vercel.app/",
+    origin: "https://sample-project-71bv.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
