@@ -45,8 +45,10 @@ export default function Signup() {
 
       alert(
         err.response?.data?.message ||
-          "Signup Failed"
+        err.response?.data ||
+        err.message
       );
+
     } finally {
       setLoading(false);
     }
